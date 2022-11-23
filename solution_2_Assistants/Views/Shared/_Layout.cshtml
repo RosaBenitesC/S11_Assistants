@@ -1,0 +1,37 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/site.css" />
+    @RenderSection("style",false)
+    <title>Bee @(ViewData["title"])</title>
+</head>
+<body>
+    <header>
+        <h1>Bzzz bzz</h1>
+    </header>
+    <main class="container-fluid">
+        <div class="row">
+            <div class="@(IsSectionDefined("rightColumn") ? "col-6" : "col-12")">
+                @RenderBody()
+            </div>
+            @if (IsSectionDefined("rightColumn"))
+            {
+                <div class="col-6">
+                    @RenderSection("rightColumn", false)
+                </div>
+            }
+        </div>
+    </main>
+    <footer>
+        <p>&copy; Bzzzz bzzzzz</p>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+    @*@RenderSection("Scripts", false)*@
+</body>
+</html>
