@@ -17,12 +17,12 @@
             <div class="@(IsSectionDefined("rightColumn") ? "col-6" : "col-12")">
                 @RenderBody()
             </div>
-            @if (IsSectionDefined("rightColumn"))
+            @*@if (IsSectionDefined("rightColumn"))
             {
                 <div class="col-6">
                     @RenderSection("rightColumn", false)
                 </div>
-            }
+            }*@
         </div>
     </main>
     <footer>
